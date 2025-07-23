@@ -129,18 +129,23 @@ footer{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-size: larger;
+}
+
+.footer-title{
     color: #cccccc68;
 }
 
 .footer-column a{
     display: flex;
     flex-direction: column;
-    margin: 10px 10px 10px 0px;
+    margin: 20px 20px 20px 0px;
+    color: #cccccc68;
 }
 
 .footer-language select{
     font-size: large;
-    padding: 5px;
+    padding: 5px 5px 5px 0px;
     background-color: black;
     border: none;
 }
