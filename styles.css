@@ -84,6 +84,7 @@ footer{
     border: 0px solid;
     border-radius: 2px;
     font-size: large;
+    cursor: pointer;
 }
 
 .or-text{
@@ -104,12 +105,14 @@ footer{
     font-size: large;
     border: none;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .forgot-password{
     background-color: transparent;
     border: none;
     font-size: large;
+    cursor: pointer;
 }
 
 .remember-class{
