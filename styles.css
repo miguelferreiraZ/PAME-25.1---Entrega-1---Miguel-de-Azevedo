@@ -1,3 +1,4 @@
+/* padronização com margin e padding 0 e alteração da fonte */
 * {
     margin: 0;
     padding: 0;
@@ -5,39 +6,77 @@
     color: white;
 }
 
+/* controle do overflow lateral */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* layout base com flexbox para permitir footer colado ao fundo */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 footer{
-    height: 20vh;
+    height: auto;   
     background-color: black;
     padding: 30px 50px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    margin: 0;
+    font-size: larger;
 }
 
+/* hover nos botões, muda background e adiciona border */
+button:hover {
+    background-color: black;
+    border: 2px solid gray;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+}
+
+/* ao clicar no input (focus), adicionamos border e mudamos o background */
+input:focus {
+    outline: none;
+    border: 1px solid #f58232;
+    box-shadow: 0 0 5px #f58232aa;
+    background-color: #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+
+/* assegurando que o container ocupe 100% da largura da tela, conteúdo alinhado no meio e não ultrapasse o tamanho max do eixo x */
 .container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    overflow-x: hidden;
 }
 
+/* o filter mantém a imagem escura com o brightness reduzido e o grayscale a torna preto e branco */
 .bg-image {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     object-fit: cover;
     filter: brightness(45%) grayscale(100%);
 }
 
+/* logo com tamanho fixo para mesmo em celular, conseguirmos ver */
 .home-logo {
     position: absolute;
     top: 20px; 
     left: 20px;
-    width: 15%; 
+    width: 200px; 
     height: auto;
 }
 
+/* login container, absolute para ficar no meio da tela */
 .login-container{
     position: absolute;
     background-color: rgba(0, 0 , 0, 0.7);
@@ -59,16 +98,13 @@ footer{
     flex-direction: column;
 }
 
-.email-input{
-    margin: 9px 0px;
-    background-color: #232323;
-    padding: 10px;
-    font-size: large;
-    border: 2px solid #cccccc38;
-    border-radius: 2px;
+.login-form{
+    display: flex;
+    flex-direction: column;   
 }
 
-.password-input{
+/* abaixo é a estilização dos inputs e button */
+.email-input, .password-input{
     margin: 9px 0px;
     background-color: #232323;
     padding: 10px;
@@ -101,7 +137,7 @@ footer{
 
 .access-code{
     background-color: rgba(110, 110, 110, 0.5);
-    height: 4vh;
+    height: 4.2vh;
     font-size: large;
     border: none;
     margin-bottom: 20px;
@@ -115,6 +151,16 @@ footer{
     cursor: pointer;
 }
 
+/* hover esqueci minha senha, translatey movimenta o texto para cima */
+.forgot-password:hover{
+    background-color: transparent;
+    border: none;
+    color: #f58232;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+
 .remember-class{
     font-size: larger;
 }
@@ -122,33 +168,49 @@ footer{
 .signup-link{
     font-size: larger;
 }
+.signup-link a:hover {
+    color: #f58232;
+}
 
+/* texto "novo por aqui?" */
 #new{
     color: #cccccc68;
 }
 
-.footer-container{
+/* layout das colunas do rodapé */
+.footer-container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
+    gap: 30px;
     justify-content: space-between;
-    font-size: larger;
+    align-items: start;
 }
 
-.footer-title{
+/* texto "Dúvidas? Ligue 0000 000 0000" */
+.footer-faq{
     color: #cccccc68;
+    margin-bottom: 20px;
 }
 
-.footer-column a{
-    display: flex;
-    flex-direction: column;
-    margin: 20px 20px 20px 0px;
+
+/* estilo dos links de cada coluna do rodapé */
+.footer-column a {
+    display: block;
+    margin-bottom: 12px;
     color: #cccccc68;
+    text-decoration: underline;
+    word-break: break-word;
 }
 
+
+
+/* estilo do seletor de idioma */
 .footer-language select{
     font-size: large;
     padding: 5px 5px 5px 0px;
     background-color: black;
     border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
